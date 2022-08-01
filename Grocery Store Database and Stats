@@ -1,0 +1,46 @@
+--Create a grocery store database
+
+/** Rose_Apothecary:
+Lotion (10) $20, 1
+Body Wash (15) $15, 1
+Shampoo (30) $10, 2
+Conditioner (30) $12, 2
+Moisturizer (12) $22, 3
+Sunscreen (10) $8, 3
+Facial Serum (8) $40, 3
+Toner (9) $11, 3
+Face Mask (20) $5, 3
+Bath Bomb (40) $5, 1
+Essential Oil (10) $3, 4
+Hair Oil (14) $15, 2
+Hair Mask (10) $9, 2
+Hand Lotion (5) $12, 3
+Cuticle Oil (10) $4, 4
+**/
+
+CREATE TABLE Rose_Apothecary (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, cost INTEGER,aisle INTEGER );
+
+INSERT INTO Rose_Apothecary VALUES (1, "lotion", 10, 10, 1);
+INSERT INTO Rose_Apothecary VALUES (2, "Body Wash", 15, 15, 1); 
+INSERT INTO Rose_Apothecary VALUES (3, "Shampoo", 30, 10, 2); 
+INSERT INTO Rose_Apothecary VALUES (4, "Conditioner", 30, 12, 2); 
+INSERT INTO Rose_Apothecary VALUES (5, "Moisturizer", 10, 22, 3); 
+INSERT INTO Rose_Apothecary VALUES (6, "Sunscreen", 10, 8, 3); 
+INSERT INTO Rose_Apothecary VALUES (7, "Facial Serum", 8, 40, 3);
+INSERT INTO Rose_Apothecary VALUES (8, "Toner", 9, 11, 3);
+INSERT INTO Rose_Apothecary VALUES (9, "Face Mask", 8, 40, 3); 
+INSERT INTO Rose_Apothecary VALUES (10, "Bath Bomb", 40, 5, 1); 
+INSERT INTO Rose_Apothecary VALUES (11, "Essential Oil", 10, 3, 4);
+INSERT INTO Rose_Apothecary VALUES (12, "Hair Oil", 10, 15, 2); 
+INSERT INTO Rose_Apothecary VALUES (13, "Hair Mask", 10, 9, 2);
+INSERT INTO Rose_Apothecary VALUES (14, "Hand Lotion", 5, 12, 3);
+INSERT INTO Rose_Apothecary VALUES (15, "Cuticle Oil", 10, 4, 4);
+
+--display the database ordered by price. 
+Select * from Rose_Apothecary ORDER BY cost;
+
+--display items equal to or less than 10 dollars
+Select * from Rose_Apothecary where cost <= 10;
+
+--what is the avg price of items in the store? 
+SELECT AVG(cost) "avg name cost" FROM Rose_Apothecary;
