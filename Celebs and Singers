@@ -1,0 +1,82 @@
+/* Here I've created two tables. One of celebrities, movies they have starred in, and who they are married to. In the other table I have placed singers, their hit
+song, their home state, and if their spouses ID if listed in the previous table*/
+CREATE TABLE Movie_Stars (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    Movie_starred TEXT,
+    Married_to TEXT);
+    
+INSERT INTO Movie_Stars 
+    VALUES (1, "Goldie Hawn", "Overboard", "Kurt Russel");
+INSERT INTO Movie_Stars 
+    VALUES (2, "Kurt Russel", "Overboard", "Goldie Hawn");
+INSERT INTO Movie_Stars 
+    VALUES (3, "Jada Pinkett Smith", "Madagascar", "Will Smith");
+INSERT INTO Movie_Stars 
+    VALUES (4, "Will Smith", "Bad Boys", "Jada Pinkett Smith");
+INSERT INTO Movie_Stars 
+    VALUES (5, "Demi Moore", "Ghost", "Bruce Willis");
+INSERT INTO Movie_Stars 
+    VALUES (6, "Bruce Willis", "Sixth Sense", "Demi Moore");
+INSERT INTO Movie_Stars 
+    VALUES (7, "Miles Teller", "Top Gun: Maverick", "Keleigh Sperry");
+INSERT INTO Movie_Stars 
+    VALUES (8, "Keke Palmer", "Nope", "N/A");
+INSERT INTO Movie_Stars 
+    VALUES (9, "Steve Carell", "Beautiful Boy", "Nancy Carell");
+INSERT INTO Movie_Stars 
+    VALUES (10, "Nancy Carell", "Bridesmaids", "Steve Carell");
+INSERT INTO Movie_Stars 
+    VALUES (11, "Mandy Moore", "Tangled", "Taylor Goldsmith");
+INSERT INTO Movie_Stars 
+    VALUES (12, "Ryan Reynolds", "Deadpool", "Blake Lively");
+INSERT INTO Movie_Stars 
+    VALUES (13, "Blake Lively", "The Shallows", "Ryan Reynolds");
+INSERT INTO Movie_Stars 
+    VALUES (14, "Ryan Gosling", "The Notebook", "Eva Mendes");
+INSERT INTO Movie_Stars 
+    VALUES (15, "Eva Mendes", "Hitch", "Ryan Gosling");
+INSERT INTO Movie_Stars
+    VALUES (16, "Nicole Kidman", "Stepford Wives", "Keith Urban");
+
+CREATE TABLE Singers (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    famous_hit TEXT,
+    home_state TEXT,
+    married_celeb_id INTEGER);
+INSERT INTO Singers
+    VALUES (1, "Keith Urban", "Who Wouldn't Wanna Be Me", "Northland", 16);
+INSERT INTO Singers
+    VALUES (2, "Will Smith", "Miami", "Philadelphia", 3);
+INSERT INTO Singers
+    VALUES (3, "Keke Palmer", "Keep It Movin", "Illinois", NULL);
+INSERT INTO Singers
+    VALUES (4, "Miley Cyrus", "Wrecking Ball", "Tennessee", NULL);
+INSERT INTO Singers
+    VALUES (5, "Britney Spears", "Hit Me Baby One More Time", "Texas", NULL);
+INSERT INTO Singers
+    VALUES (6, "Christina Aguilara", "Genie In A Bottle", "Illinois", NULL);
+INSERT INTO Singers
+    VALUES (7, "Gwen Stefani", "Hollerback Girl", "Philadelphia", NULL);
+INSERT INTO Singers
+    VALUES (8, "Blake Shelton", "Drink On It", "Oklahoma", NULL);
+INSERT INTO Singers
+    VALUES (9, "Justin Timberlake", "Mirror", "Tennessee", NULL);
+INSERT INTO Singers
+    VALUES (10, "Ricky Martin", "Livin' La Vida Loca", "Puerto Rico", NULL);
+INSERT INTO Singers
+    VALUES (11, "Aaron Carter", "I Want Candy ", "Florida", NULL);
+INSERT INTO Singers
+    VALUES (12, "Mandy Moore", "Candy", "New Hampshire", NULL);
+INSERT INTO Singers
+    VALUES (13, "Michael Jackson", "Thriller", "Indiana", NULL);
+INSERT INTO Singers
+    VALUES (14, "Elvis", "Blue Suede Shoes", "MIssippi", NULL);
+INSERT INTO Singers
+    VALUES (15, "Madonna", "Material Girl", "Michigan", NULL);
+    
+**// Here I have created a JOIN statement to show which celebrities are married to singers//**
+
+select celebs.name, singers.name 
+from movie_stars celebs join singers 
+on celebs.id=singers.married_celeb_id;
+
