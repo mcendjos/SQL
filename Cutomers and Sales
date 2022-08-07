@@ -44,3 +44,8 @@ LEFT JOIN BIT_DB.customers cust
 ON FEB.orderid=cust.order_id
 WHERE Feb.Quantity>2;
 
+select product, SUM(quantity) from BIT_DB.FebSales
+where location like '%Los Angeles%' 
+group by product;
+
+
