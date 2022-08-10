@@ -1,5 +1,5 @@
 **//Query all columns for all American cities in the CITY table with populations larger than 100000. 
-The CountryCode for America is USA.//**
+The CountryCode for America is USA.//**#4078c0
 SELECT * FROM CITY WHERE POPULATION >100000 AND COUNTRYCODE='USA';
 
 **//Query all attributes of every Japanese city in the CITY table. The COUNTRYCODE for Japan is JPN//**
